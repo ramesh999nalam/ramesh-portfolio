@@ -54,6 +54,8 @@ import {
   why,
 } from './data.js'
 
+import logo from '/logo.png'
+
 /* ------------------------------------------------------------------ */
 /* Hooks & small building blocks                                       */
 /* ------------------------------------------------------------------ */
@@ -235,8 +237,8 @@ function Nav({ themeProps }) {
   return (
     <header className={`nav ${scrolled || open ? 'nav-solid' : ''}`}>
       <div className="wrap nav-inner">
-        <a href="#home" className="nav-brand" aria-label="Ramesh Kumar Naidu — home">
-          RKN
+        <a style={{ width: '50px' , height: '50px' ,objectFit: 'contain' }} href="#home" className="nav-brand" aria-label="Ramesh Kumar Naidu — home">
+          <img src={logo} alt="Ramesh Kumar Naidu" />
         </a>
         <nav className="nav-links" aria-label="Primary">
           {navItems.map(([label, id]) => (

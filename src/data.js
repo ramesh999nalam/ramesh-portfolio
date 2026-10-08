@@ -72,7 +72,7 @@ export const typedRoles = [
 export const themes = [
   { name: 'Trust Blue', color: '#0284C7' },       /* Sky 600 */
   { name: 'Health Teal', color: '#0D9488' },      /* Teal 600 */
-  { name: 'Corporate Indigo', color: '#4F46E5' }, /* Indigo 600 */
+  { name: 'Corporate Indigo', color: '#2D7495' }, /* Indigo 600 */
   { name: 'Executive Slate', color: '#334155' },  /* Slate 700 */
 ]
 
