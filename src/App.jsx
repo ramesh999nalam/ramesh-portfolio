@@ -104,7 +104,6 @@ function Reveal({ children, delay = 0, y = 30, className = '', as = 'div', ...re
   )
 }
 
-// Lines starting with "~" render in italic serif + accent for editorial rhythm.
 function Title({ lines, as: Tag = 'h2', className = '' }) {
   return (
     <Tag className={`display ${className}`}>
@@ -308,7 +307,6 @@ function Hero({ typed }) {
   const [text] = typed
   const wordRef = useRef(null)
 
-  // Fit "PORTFOLIO" to the full content width regardless of font metrics.
   useEffect(() => {
     const fit = () => {
       const box = wordRef.current
@@ -387,13 +385,13 @@ function Hero({ typed }) {
             <div className="hero-circle" aria-hidden="true" />
             {photoFailed ? (
               <div className="photo-placeholder" role="img" aria-label="Photo placeholder">
-                PHOTO PLACEHOLDER
-                <small>add public/ramesh.png</small>
+                ADD YOUR PHOTO HERE
+                <small>Replace public/ramesh.png</small>
               </div>
             ) : (
               <img
                 src="ramesh.png"
-                alt="Ramesh Kumar Naidu, Senior Executive in hospital billing and insurance"
+                alt="Ramesh Kumar Naidu"
                 onError={() => setPhotoFailed(true)}
               />
             )}
@@ -566,7 +564,7 @@ function Achievements() {
         <div className="grid-3">
           {awards.map((a, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <motion.article className="card award" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+              <motion.article className="card award">
                 <div className="award-top">
                   <span className="big-n">{String(i + 1).padStart(2, '0')}</span>
                   <Award size={22} strokeWidth={1.25} aria-hidden="true" />
@@ -608,7 +606,7 @@ function Insurance() {
             const Icon = serviceIcons[i]
             return (
               <Reveal key={s} delay={(i % 3) * 0.07}>
-                <motion.div className="card service" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+                <motion.div className="card service">
                   <div className="service-top">
                     <span className="small-n">{String(i + 1).padStart(2, '0')}</span>
                     <Icon size={20} strokeWidth={1.25} aria-hidden="true" />
@@ -637,7 +635,6 @@ function Insurance() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.5, delay: (i % 8) * 0.04 }}
-              whileHover={{ y: -4 }}
             >
               <img src={p.src} alt={p.name} loading="lazy" />
             </motion.li>
@@ -677,7 +674,7 @@ function WomenChildren() {
         <div className="grid-2">
           {cards.map((c, i) => (
             <Reveal key={c.t} delay={i * 0.1}>
-              <motion.article className="card big-card" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+              <motion.article className="card big-card">
                 <c.icon size={30} strokeWidth={1.1} aria-hidden="true" />
                 <h3 className="serif-h">{c.t}</h3>
                 <p>{c.d}</p>
@@ -724,7 +721,7 @@ function Marketing() {
         <div className="grid-3">
           {marketingCards.map(([t, d], i) => (
             <Reveal key={t} delay={(i % 3) * 0.07}>
-              <motion.article className="card" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+              <motion.article className="card">
                 <div className="service-top">
                   <span className="small-n">{String(i + 1).padStart(2, '0')}</span>
                   <Users size={20} strokeWidth={1.25} aria-hidden="true" />
@@ -793,10 +790,13 @@ function Schemes() {
         </Reveal>
         <div className="grid-3">
           {schemes.map((s, i) => (
-            <Reveal key={s} delay={i * 0.08}>
-              <motion.div className="card scheme" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+            <Reveal key={s.name} delay={i * 0.08}>
+              <motion.div className="card scheme">
                 <span className="small-n">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="serif-h">{s}</h3>
+                <div className="scheme-logo">
+                  <img src={s.image} alt={s.name} loading="lazy" />
+                </div>
+                <h3 className="serif-h">{s.name}</h3>
               </motion.div>
             </Reveal>
           ))}
@@ -855,7 +855,7 @@ function Education() {
         <div className="grid-3">
           {edu.map(([d, s, y], i) => (
             <Reveal key={s} delay={i * 0.08}>
-              <motion.div className="card" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+              <motion.div className="card">
                 <span className="big-n sm">{d}</span>
                 <h3 className="card-h">{s}</h3>
                 <p className="card-p">{y}</p>
@@ -863,7 +863,7 @@ function Education() {
             </Reveal>
           ))}
           <Reveal delay={0.16}>
-            <motion.div className="card" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+            <motion.div className="card">
               <span className="small-n">Technical skills</span>
               <h3 className="card-h">MS Office</h3>
               <p className="card-p">Internet / Net Concepts</p>
@@ -897,7 +897,7 @@ function Why() {
         <div className="grid-4">
           {why.map(([t, d], i) => (
             <Reveal key={t} delay={i * 0.08}>
-              <motion.article className="card" whileHover={{ y: -6 }} transition={{ duration: 0.25 }}>
+              <motion.article className="card">
                 <span className="big-n">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="card-h">{t}</h3>
                 <p className="card-p">{d}</p>
@@ -930,7 +930,7 @@ function Brand() {
           It is about <span className="accent-text">people, trust</span> and <span className="accent-text">connection.</span>
         </motion.blockquote>
         <Reveal className="brand-sig" delay={0.2}>
-          <strong>Ramesh Kumar Naidu</strong>
+          <strong>Ramesh Kumar Naidu | Visakhapatnam</strong>
           <span>Senior Executive</span>
           <span>Hospital Billing • Insurance • Corporate Relations</span>
         </Reveal>
@@ -951,7 +951,7 @@ function Contact() {
             professional collaborations.
           </Reveal>
           <Reveal className="contact-card" delay={0.1}>
-            <h3 className="serif-h">Ramesh Kumar Naidu</h3>
+            <h3 className="serif-h">Ramesh Kumar Naidu | Visakhapatnam</h3>
             <ul>
               <li>
                 <MapPin size={16} aria-hidden="true" /> Visakhapatnam, Andhra Pradesh
@@ -996,7 +996,7 @@ function Footer() {
       <div className="wrap">
         <div className="footer-top">
           <div>
-            <p className="footer-name">Ramesh Kumar Naidu</p>
+            <p className="footer-name">Ramesh Kumar Naidu | Visakhapatnam</p>
             <p>Senior Executive</p>
             <p>Hospital Billing | Insurance | Corporate Relations</p>
             <p className="footer-loc">Visakhapatnam • India</p>
@@ -1010,7 +1010,7 @@ function Footer() {
           </nav>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Ramesh Kumar Naidu</span>
+          <span>© 2026 Ramesh Kumar Naidu[cite: Vizag]</span>
           <span>Personal Professional Portfolio</span>
         </div>
       </div>

@@ -68,12 +68,12 @@ export const typedRoles = [
   'Marketing & Referrals',
 ]
 
-// Accent themes — all drawn from the supplied palette.
+// Updated Accent Themes - A refined "Medical Executive" Palette
 export const themes = [
-  { name: 'Terracotta', color: '#C56646' },
-  { name: 'Secondary Terracotta', color: '#9D6F59' },
-  { name: 'Medium Brown', color: '#8E5838' },
-  { name: 'Deep Brown', color: '#50331F' },
+  { name: 'Trust Blue', color: '#0284C7' },       /* Sky 600 */
+  { name: 'Health Teal', color: '#0D9488' },      /* Teal 600 */
+  { name: 'Corporate Indigo', color: '#4F46E5' }, /* Indigo 600 */
+  { name: 'Executive Slate', color: '#334155' },  /* Slate 700 */
 ]
 
 export const trust = [
@@ -139,8 +139,8 @@ export const timeline = [
 ]
 
 export const awards = [
-  { title: ['Best Employee'], org: 'Seven Hills Health Care', note: 'Consecutive Recognition' },
-  { title: ['Best Employee'], org: 'Seven Hills Health Care', note: 'Second Consecutive Recognition' },
+  { title: ['Best Employee', 'of the month'], org: 'Seven Hills Health Care', note: 'Consecutive Recognition' },
+  { title: ['Best Employee', 'of the month'], org: 'Seven Hills Health Care', note: 'Second Consecutive Recognition' },
   { title: ['Best Employee', 'of the Year'], org: 'Motherly Women and Children Hospital', note: 'Current role' },
 ]
 
@@ -174,7 +174,24 @@ export const corporateFocus = [
   'Corporate Healthcare Programs',
 ]
 
-export const schemes = ['Aarogya Bhadhratha', 'Aarogya Sahayatha', 'CARE']
+export const schemes = [
+  {
+    name: 'Aarogya Bhadhratha',
+    image: '/schemes/aarogya-bhadhratha.png',
+  },
+  {
+    name: 'Aarogya Sahayatha',
+    image: '/schemes/aarogya-sahayatha.png',
+  },
+  {
+    name: 'Airport Authority of India',
+    image: '/schemes/airport-authority-india.png',
+  },
+  {
+    name: 'Food Corporation of India',
+    image: '/schemes/food-corporation-india.png',
+  },
+]
 
 export const skills = [
   ['Hospital Billing', 5],
